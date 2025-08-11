@@ -17,7 +17,15 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from myapp.views import home
 
 urlpatterns = [
+    # admin/ - is an admin panel, provided by django
+    # admin.site.urls - 
     path("admin/", admin.site.urls),
+
+    # 'home/' - is the url of our new page
+    # home - is the View function that will serve our new page
+    # can access the new page via the link: 'http://127.0.0.1:8000/home'
+    path('home/', home)
 ]
