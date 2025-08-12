@@ -16,3 +16,6 @@ def home(request):
         # allows our View function to return http response to the user
         # 
     return render(request, 'myapp/home.html', {})
+
+def aboutme(request):
+    return render(request, 'myapp/about-me.html', {})
