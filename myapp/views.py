@@ -17,5 +17,5 @@ def home(request):
         # 
     return render(request, 'myapp/home.html', {})
 
-def aboutme(request):
-    return render(request, 'myapp/about-me.html', {})
+def my_page(request):
+    return render(request, 'myapp/my-page.html', {})
