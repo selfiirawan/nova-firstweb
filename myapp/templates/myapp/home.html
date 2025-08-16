@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+
+    {% comment %}
+        Static Tag:
+        - allow us to use our style.css that is found from static folder
+        - we had informed Django about our static folder from settings.py->STATICFILES_DIRS
+        - IMPORTANT : need to load static to get this working {% load static %}
+    {% endcomment %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 <body>

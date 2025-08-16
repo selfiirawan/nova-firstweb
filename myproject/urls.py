@@ -27,6 +27,10 @@ urlpatterns = [
     # 'home/' - is the url of our new page
     # home - is the View function that will serve our new page
     # can access the new page via the link: 'http://127.0.0.1:8000/home'
-    path('home/', home),
+    #path('home/', home),
+
+    # using empty string '', can access this page by the server domain 
+    # without any url , as: http://127.0.0.1:8000/
+    path('', home), 
     path('my-page/', my_page)
 ]
