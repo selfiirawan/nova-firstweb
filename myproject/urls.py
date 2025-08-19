@@ -1,8 +1,8 @@
-"""
-URL configuration for myproject project.
+
+"""myproject URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.2/topics/http/urls/
+    https://docs.djangoproject.com/en/3.1/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -14,23 +14,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
 from django.contrib import admin
 from django.urls import path
-from myapp.views import home, my_page
+from myapp.views import home, about, contact
 
 urlpatterns = [
-    # admin/ - is an admin panel, provided by django
-    # admin.site.urls - 
-    path("admin/", admin.site.urls),
+    # admin/ : is an admin panel, that django provides us.
+    path('admin/', admin.site.urls),
 
-    # 'home/' - is the url of our new page
-    # home - is the View function that will serve our new page
-    # can access the new page via the link: 'http://127.0.0.1:8000/home'
-    #path('home/', home),
-
-    # using empty string '', can access this page by the server domain 
-    # without any url , as: http://127.0.0.1:8000/
-    path('', home), 
-    path('my-page/', my_page)
+    path('', home),
+    path('about/', about),
+    path('contact/', contact),
 ]
