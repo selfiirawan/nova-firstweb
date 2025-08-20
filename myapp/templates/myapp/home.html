@@ -1,24 +1,18 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+{% extends './assets/base.html' %}
+{% comment %}
+  importing all of the code from base.html to use on home.html
+{% endcomment %}
 
-    {% comment %}
-        Static Tag:
-        - allow us to use our style.css that is found from static folder
-        - we had informed Django about our static folder from settings.py->STATICFILES_DIRS
-        - IMPORTANT : need to load static to get this working {% load static %}
-    {% endcomment %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    
-    <h1>Hello, from home.html file.</h1>
 
-    <img src="{% static 'img/car.png' %}" alt="Aston Martin Car" width="500">
-    <script src="{% static 'js/script.js' %}"></script>
-</body>
-</html>
+{% comment %}
+  allowing home.html to create its own html elements, that will be placed inside {% block mainblock %}{% endblock %} on base.html
+{% endcomment %}
+{% block mainblock %}
+    <h1>🏡 Welcome to Home</h1>
+    <p class="lead">This is the main page of our Django site.</p>
+
+
+    <div class="alert alert-info">
+    This page uses Bootstrap and Django template!
+    </div>
+{% endblock %}
