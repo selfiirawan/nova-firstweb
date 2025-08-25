@@ -1,3 +1,5 @@
+
+
 {% extends './assets/base.html' %}
 {% comment %}
   importing all of the code from base.html to use on home.html
@@ -16,12 +18,14 @@
     This page uses Bootstrap and Django template!
     </div>
 
+
     <h2>Student Name : {{name}}</h2>
     <h2>Student Age : {{age}}</h2>
     <h2>Student Phone : {{phone}}</h2>
     <h2>Student Address : {{address}}</h2>
 
-    {% if is_graduated %}
+
+   {% if is_graduated %}
       <div class="card m-4 p-5 text-dark bg-info text-center">
         <h2>{{name}} is Graduated!!!!!!</h2>
       </div>
@@ -37,19 +41,22 @@
       {% endfor %}
     {% endcomment %}
 
+
     <ul class="list-group">
 
-      {% for i in subjects %}
-        <li class="list-group-item"> {{i}} </li>
+      {% for subject in subjects %}
+        <li class="list-group-item"> {{subject}} </li>
       {% endfor %}
 
     </ul>
+
     <br>
     <hr>
     <h2>Books: </h2>
 
     {% for book in books %}
-       <div class="card mb-3">
+
+      <div class="card mb-3">
         <div class="card-body">
           <h5 class="card-title"> {{book.title}}</h5>
 
@@ -64,8 +71,11 @@
         {% else %}
           <span class="badge bg-warning text-dark">🕒 Not Read</span>
         {% endif %}
+
         </div>
       </div>
+
     {% endfor %}
+
 
 {% endblock %}
