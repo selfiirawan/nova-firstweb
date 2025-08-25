@@ -1,14 +1,22 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
+from datetime import datetime, timedelta
 
 def home(request):
 
     # Steps:
         # (in future) 1 - get data from database
 
+    print(f"\ndatetime.now() : {datetime.now()}\n")
+
     # 2 - give data to html
     context = {
+        "nonexists": "",
+        "nonexists_none": None,
+        # "joined_at": datetime.now(),# joined_at will be the time now, when you start your website
+        "joined_at": datetime.now() - timedelta(days=2),
+        
         "name": "Alice",
         "age": 30,
         "phone": "0123456",
